@@ -27,6 +27,10 @@ export class Archivo extends Entity {
   })
   url_archivo: string;
 
+  @property({
+    type: 'number',
+  })
+  id_tipo?: number;
 
   constructor(data?: Partial<Archivo>) {
     super(data);

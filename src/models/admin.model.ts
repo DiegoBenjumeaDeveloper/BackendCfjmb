@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Rol} from './rol.model';
 
 @model()
 export class Admin extends Entity {
@@ -21,6 +22,8 @@ export class Admin extends Entity {
   })
   cargo: string;
 
+  @hasMany(() => Rol, {keyTo: 'id_admin'})
+  rols: Rol[];
 
   constructor(data?: Partial<Admin>) {
     super(data);

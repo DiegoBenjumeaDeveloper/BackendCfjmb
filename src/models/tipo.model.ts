@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Archivo} from './archivo.model';
 
 @model()
 export class Tipo extends Entity {
@@ -15,6 +16,13 @@ export class Tipo extends Entity {
   })
   tipo_nombre: string;
 
+  @property({
+    type: 'number',
+  })
+  id_usuario?: number;
+
+  @hasMany(() => Archivo, {keyTo: 'id_tipo'})
+  archivos: Archivo[];
 
   constructor(data?: Partial<Tipo>) {
     super(data);
