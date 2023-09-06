@@ -3,3 +3,8 @@ export * from './admin-rol.controller';
 export * from './rol-usuario.controller';
 export * from './usuario-tipo.controller';
 export * from './tipo-archivo.controller';
+export * from './admin.controller';
+export * from './rol.controller';
+export * from './id.controller';
+export * from './tipo.controller';
+export * from './archivo.controller';
